@@ -14,6 +14,7 @@
 # ///
 
 import marimo
+from security import safe_requests
 
 __generated_with = "0.9.10"
 app = marimo.App()
@@ -118,7 +119,7 @@ def __(np):
 
     def load_image_from_url(url):
         # Fetch the image data
-        response = requests.get(url)
+        response = safe_requests.get(url)
         response.raise_for_status()  # Raise an exception for bad responses
 
         # Convert the image data to a numpy array
